@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11612.153 insiders
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.Chart.RelationalModel.HashCodes", "Pure.Chart.RelationalModel.HashCodes\Pure.Chart.RelationalModel.HashCodes.csproj", "{284A8440-614B-4C4A-8E92-EAA2BCBA368D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5B5AFF20-552B-4C18-B4EA-532E1AC96C1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DBCCA5B8-90BC-4069-A895-21F39117B2FF}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pure.Chart.RelationalModel.HashCodes.Tests", "Tests\Pure.Chart.RelationalModel.HashCodes.Tests\Pure.Chart.RelationalModel.HashCodes.Tests.csproj", "{6CA51F0E-A1F3-4C41-80F4-72CD441C058B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{284A8440-614B-4C4A-8E92-EAA2BCBA368D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284A8440-614B-4C4A-8E92-EAA2BCBA368D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284A8440-614B-4C4A-8E92-EAA2BCBA368D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284A8440-614B-4C4A-8E92-EAA2BCBA368D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA51F0E-A1F3-4C41-80F4-72CD441C058B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA51F0E-A1F3-4C41-80F4-72CD441C058B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA51F0E-A1F3-4C41-80F4-72CD441C058B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA51F0E-A1F3-4C41-80F4-72CD441C058B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CA51F0E-A1F3-4C41-80F4-72CD441C058B} = {5B5AFF20-552B-4C18-B4EA-532E1AC96C1C}
+	EndGlobalSection
+EndGlobal
