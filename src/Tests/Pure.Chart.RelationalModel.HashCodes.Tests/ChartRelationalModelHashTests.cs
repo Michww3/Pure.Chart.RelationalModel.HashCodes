@@ -1,3 +1,4 @@
+using System.Collections;
 using Pure.Chart.RelationalModel.Abstractions;
 using Pure.HashCodes;
 using Pure.Primitives.Abstractions.Guid;
@@ -9,6 +10,26 @@ namespace Pure.Chart.RelationalModel.HashCodes.Tests;
 
 public sealed record ChartRelationalModelHashTests
 {
+    private readonly byte[] _typePrefix =
+    [
+        240,
+        25,
+        157,
+        1,
+        33,
+        204,
+        173,
+        118,
+        154,
+        25,
+        172,
+        225,
+        208,
+        94,
+        8,
+        159,
+    ];
+
     [Fact]
     public void ProduceCorrectHashFromModel()
     {
@@ -2080,5 +2101,83 @@ public sealed record ChartRelationalModelHashTests
         );
 
         Assert.True(expected.SequenceEqual(actual));
+    }
+
+    [Fact]
+    public void EnumeratesAsUntyped()
+    {
+        IGuid id = new Guid();
+        IString title = new RandomString();
+        IString desciption = new RandomString();
+        IGuid typeId = new Guid();
+        IGuid xAxisId = new Guid();
+        IGuid yAxisId = new Guid();
+
+        IChartRelationalModel model = new ChartRelationalModel(
+            id,
+            title,
+            desciption,
+            typeId,
+            xAxisId,
+            yAxisId
+        );
+
+        IEnumerable hashEnumerable = new ChartRelationalModelHash(model);
+
+        IEnumerator<byte> expectedHash = new DeterminedHash(
+            _typePrefix
+                .Concat(new DeterminedHash(id))
+                .Concat(new DeterminedHash(title))
+                .Concat(new DeterminedHash(desciption))
+                .Concat(new DeterminedHash(typeId))
+                .Concat(new DeterminedHash(xAxisId))
+                .Concat(new DeterminedHash(yAxisId))
+        ).GetEnumerator();
+
+        bool equal = true;
+
+        foreach (object item in hashEnumerable)
+        {
+            _ = expectedHash.MoveNext();
+            if ((byte)item != expectedHash.Current)
+            {
+                equal = false;
+                break;
+            }
+        }
+
+        Assert.True(equal);
+    }
+
+    [Fact]
+    public void ProducesCorrectHash()
+    {
+        IGuid id = new Guid();
+        IString title = new RandomString();
+        IString desciption = new RandomString();
+        IGuid typeId = new Guid();
+        IGuid xAxisId = new Guid();
+        IGuid yAxisId = new Guid();
+
+        IChartRelationalModel model = new ChartRelationalModel(
+            id,
+            title,
+            desciption,
+            typeId,
+            xAxisId,
+            yAxisId
+        );
+
+        IEnumerable<byte> expectedHash = new DeterminedHash(
+            _typePrefix
+                .Concat(new DeterminedHash(id))
+                .Concat(new DeterminedHash(title))
+                .Concat(new DeterminedHash(desciption))
+                .Concat(new DeterminedHash(typeId))
+                .Concat(new DeterminedHash(xAxisId))
+                .Concat(new DeterminedHash(yAxisId))
+        );
+
+        Assert.Equal(expectedHash, new ChartRelationalModelHash(model));
     }
 }
