@@ -1,3 +1,4 @@
+using System.Collections;
 using Pure.Chart.RelationalModel.Abstractions;
 using Pure.HashCodes;
 using Pure.Primitives.Abstractions.Guid;
@@ -9,6 +10,26 @@ namespace Pure.Chart.RelationalModel.HashCodes.Tests;
 
 public sealed record AxisRelationalModelHashTests
 {
+    private readonly byte[] _typePrefix =
+    [
+        247,
+        25,
+        157,
+        1,
+        50,
+        254,
+        158,
+        125,
+        188,
+        66,
+        0,
+        101,
+        214,
+        150,
+        50,
+        194,
+    ];
+
     [Fact]
     public void ProduceCorrectHashFromModel()
     {
@@ -210,5 +231,65 @@ public sealed record AxisRelationalModelHashTests
         );
 
         Assert.True(expected.SequenceEqual(actual));
+    }
+
+    [Fact]
+    public void EnumeratesAsUntyped()
+    {
+        IGuid id = new Guid();
+        IGuid chartId = new Guid();
+        IString legend = new RandomString();
+
+        IAxisRelationalModel model = new AxisRelationalModel(
+            id,
+            chartId,
+            legend
+        );
+
+        IEnumerable hashEnumerable = new AxisRelationalModelHash(model);
+
+        IEnumerator<byte> expectedHash = new DeterminedHash(
+            _typePrefix
+                .Concat(new DeterminedHash(id))
+                .Concat(new DeterminedHash(chartId))
+                .Concat(new DeterminedHash(legend))
+        ).GetEnumerator();
+
+        bool equal = true;
+
+        foreach (object item in hashEnumerable)
+        {
+            _ = expectedHash.MoveNext();
+            if ((byte)item != expectedHash.Current)
+            {
+                equal = false;
+                break;
+            }
+        }
+
+        Assert.True(equal);
+    }
+
+    [Fact]
+    public void ProducesCorrectHash()
+    {
+        IGuid id = new Guid();
+        IGuid chartId = new Guid();
+        IString legend = new RandomString();
+
+        IAxisRelationalModel model = new AxisRelationalModel(
+            id,
+            chartId,
+            legend
+        );
+
+        IEnumerable<byte> expectedHash = new DeterminedHash(
+            _typePrefix
+                .Concat(new DeterminedHash(id))
+                .Concat(new DeterminedHash(chartId))
+                .Concat(new DeterminedHash(legend))
+        );
+
+        Assert.Equal(expectedHash, new AxisRelationalModelHash(model));
     }
 }
