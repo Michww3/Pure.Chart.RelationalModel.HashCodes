@@ -1,3 +1,4 @@
+using System.Collections;
 using Pure.Chart.RelationalModel.Abstractions;
 using Pure.HashCodes;
 using Pure.Primitives.Abstractions.Guid;
@@ -9,6 +10,26 @@ namespace Pure.Chart.RelationalModel.HashCodes.Tests;
 
 public sealed record ChartTypeRelationalModelHashTests
 {
+    private readonly byte[] _typePrefix =
+    [
+        241,
+        25,
+        157,
+        1,
+        147,
+        155,
+        31,
+        119,
+        186,
+        56,
+        147,
+        211,
+        74,
+        98,
+        7,
+        230,
+    ];
+
     [Fact]
     public void ProduceCorrectHashFromModel()
     {
@@ -104,5 +125,59 @@ public sealed record ChartTypeRelationalModelHashTests
         );
 
         Assert.True(expected.SequenceEqual(actual));
+    }
+
+    [Fact]
+    public void EnumeratesAsUntyped()
+    {
+        IGuid id = new Guid();
+        IString name = new RandomString();
+
+        IChartTypeRelationalModel model = new ChartTypeRelationalModel(
+            id,
+            name
+        );
+
+        IEnumerable hashEnumerable = new ChartTypeRelationalModelHash(model);
+
+        IEnumerator<byte> expectedHash = new DeterminedHash(
+            _typePrefix
+                .Concat(new DeterminedHash(id))
+                .Concat(new DeterminedHash(name))
+        ).GetEnumerator();
+
+        bool equal = true;
+
+        foreach (object item in hashEnumerable)
+        {
+            _ = expectedHash.MoveNext();
+            if ((byte)item != expectedHash.Current)
+            {
+                equal = false;
+                break;
+            }
+        }
+
+        Assert.True(equal);
+    }
+
+    [Fact]
+    public void ProducesCorrectHash()
+    {
+        IGuid id = new Guid();
+        IString name = new RandomString();
+
+        IChartTypeRelationalModel model = new ChartTypeRelationalModel(
+            id,
+            name
+        );
+
+        IEnumerable<byte> expectedHash = new DeterminedHash(
+            _typePrefix
+                .Concat(new DeterminedHash(id))
+                .Concat(new DeterminedHash(name))
+        );
+
+        Assert.Equal(expectedHash, new ChartTypeRelationalModelHash(model));
     }
 }
