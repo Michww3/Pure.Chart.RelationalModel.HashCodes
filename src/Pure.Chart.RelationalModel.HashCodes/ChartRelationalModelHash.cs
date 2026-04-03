@@ -53,21 +53,1074 @@ public sealed record ChartRelationalModelHash : IDeterminedHash
     { }
 
     public ChartRelationalModelHash(
-        IGuid id,
+     IGuid id,
+     IString title,
+     IString desciption,
+     IGuid typeId,
+     IGuid xAxisId,
+     IGuid yAxisId
+    ) : this(
+         new DeterminedHash(id),
+         title,
+         desciption,
+         typeId,
+         xAxisId,
+         yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
         IString title,
-        IString description,
+        IString desciption,
         IGuid typeId,
         IGuid xAxisId,
         IGuid yAxisId
-    )
-        : this(
-            new DeterminedHash(id),
+    ) : this(
+            idHash,
             new DeterminedHash(title),
-            new DeterminedHash(description),
+            desciption,
+            typeId,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IGuid typeId,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciption,
+            typeId,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciptionHash,
+            typeId,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciption,
+            typeIdHash,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IString desciption,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciption,
+            typeId,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IString desciption,
+        IGuid typeId,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciption,
+            typeId,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IString desciption,
+        IGuid typeId,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciption,
+            typeId,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IGuid typeId,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciption,
+            typeId,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciption,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciptionHash,
+            typeId,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciptionHash,
+            typeId,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciption,
+            typeId,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IString desciption,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciption,
+            typeId,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciption,
+            typeIdHash,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciptionHash,
+            typeIdHash,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciption,
+            typeIdHash,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciption,
+            typeIdHash,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IString desciption,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciption,
+            typeId,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciptionHash,
+            typeId,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciptionHash,
+            typeId,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IGuid typeId,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            titleHash,
+            new DeterminedHash(desciption),
+            typeId,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IString desciption,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciption,
+            typeId,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciption,
+            typeIdHash,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciptionHash,
+            typeId,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciptionHash,
+            typeId,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IGuid typeId,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            titleHash,
+            new DeterminedHash(desciption),
+            typeId,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciption,
+            typeIdHash,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciption,
+            typeId,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciptionHash,
+            typeId,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciptionHash,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciption,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciption,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciptionHash,
+            typeIdHash,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciptionHash,
+            typeId,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            titleHash,
+            new DeterminedHash(desciption),
+            typeId,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciption,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciptionHash,
+            typeIdHash,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciptionHash,
+            typeIdHash,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            titleHash,
+            new DeterminedHash(desciption),
+            typeIdHash,
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            titleHash,
+            desciptionHash,
             new DeterminedHash(typeId),
+            xAxisId,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciptionHash,
+            typeId,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            titleHash,
+            new DeterminedHash(desciption),
+            typeId,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciptionHash,
+            typeId,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciptionHash,
+            typeId,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            title,
+            desciptionHash,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciptionHash,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciptionHash,
+            typeIdHash,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            titleHash,
+            new DeterminedHash(desciption),
+            typeIdHash,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            titleHash,
+            desciptionHash,
+            new DeterminedHash(typeId),
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciptionHash,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciption,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            titleHash,
+            new DeterminedHash(desciption),
+            typeIdHash,
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            titleHash,
+            desciptionHash,
+            new DeterminedHash(typeId),
+            xAxisIdHash,
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            titleHash,
+            desciptionHash,
+            typeIdHash,
             new DeterminedHash(xAxisId),
+            yAxisId
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciptionHash,
+            typeIdHash,
+            xAxisId,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciption,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IString title,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            new DeterminedHash(title),
+            desciptionHash,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IString desciption,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            titleHash,
+            new DeterminedHash(desciption),
+            typeIdHash,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IGuid yAxisId
+    ) : this(
+            idHash,
+            titleHash,
+            desciptionHash,
+            typeIdHash,
+            xAxisIdHash,
             new DeterminedHash(yAxisId)
-        )
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IGuid xAxisId,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            titleHash,
+            desciptionHash,
+            typeIdHash,
+            new DeterminedHash(xAxisId),
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IGuid id,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IDeterminedHash typeIdHash,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            new DeterminedHash(id),
+            titleHash,
+            desciptionHash,
+            typeIdHash,
+            xAxisIdHash,
+            yAxisIdHash
+    )
+    { }
+
+    public ChartRelationalModelHash(
+        IDeterminedHash idHash,
+        IDeterminedHash titleHash,
+        IDeterminedHash desciptionHash,
+        IGuid typeId,
+        IDeterminedHash xAxisIdHash,
+        IDeterminedHash yAxisIdHash
+    ) : this(
+            idHash,
+            titleHash,
+            desciptionHash,
+            new DeterminedHash(typeId),
+            xAxisIdHash,
+            yAxisIdHash
+    )
     { }
 
     public ChartRelationalModelHash(
